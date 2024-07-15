@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>和我一起打枪吧</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            display: inline-block;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+        h1, p {
+            margin: 10px 0;
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+            margin-top: 20px;
+        }
+        #myButton {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        #myButton:hover {
+            background-color: #218838;
+        }
+        #myButton:active {
+            transform: scale(0.98); /* 点击时稍微缩小 */
+        }
+        #textToChange {
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="textToChange">
+            <h1>色图看的我好爽啊🔥</h1>
+            <p>快去发给好朋友一起🦌吧！</p>
+        </div>
+        
+        <img id="myImage" src="https://img.picui.cn/free/2024/07/15/6694dc73398b1.jpg" alt="整蛊图片">
+        
+        <button id="myButton" onclick="changeTextAndShowImageAndPlayMusic()">点击我</button>
+
+        <audio id="myAudio" src="https://s21.aconvert.com/convert/p3r68-cdx67/jwl34-rhuuw.mp3" hidden></audio>
+    </div>
+
+    <script>
+        function changeTextAndShowImageAndPlayMusic() {
+            var image = document.getElementById('myImage');
+            var audio = document.getElementById('myAudio');
+            var textDiv = document.getElementById('textToChange');
+            
+            // 淡出文本
+            textDiv.style.opacity = '0';
+            setTimeout(() => {
+                // 改变文本内容
+                textDiv.innerHTML = '<h1>你被整蛊了！</h1><p>快去告诉你的朋友吧！</p>';
+                // 淡入新文本
+                textDiv.style.opacity = '1';
+            }, 500); // 0.5秒后改变文本
+
+            // 显示图片
+            image.style.display = 'block';
+            
+            // 播放音乐
+            audio.play();
+        }
+    </script>
+</body>
+</html>
+<!-- 源码什么的，参考一下没问题的，这个东西没有什么技术含量。 -->
